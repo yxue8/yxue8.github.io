@@ -21,9 +21,6 @@ body {
 p {
   flex: 1;
   line-height: .75;
-  position: absolute;
-  left:0;
-  right:0;
   top:20px;
   color: #b3b3b3;
   text-align: center;
@@ -39,8 +36,8 @@ p::before, p::after {
   --b-cut: calc(var(--t-cut) + var(--v-height));
   content: attr(data-text);
   position: absolute;
-  width: 100%;
   left: 0;
+  right:0;
   text-align: center;
   transform: translateX(calc(var(--left) * 100%));
   filter: drop-shadow(0 0 transparent);
