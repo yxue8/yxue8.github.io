@@ -6,24 +6,54 @@
 		<style>
 			body {
 				margin: 0;
-				background-image: url('/images/off.jpg');
-				background-repeat: no-repeat;
-				background-size: cover;
 			 }
+
+			#scenecontainer{
+				height:100%;
+				width:100%;
+			}
+
+			#threecanvas {
+			  width: 100%;
+			  height: 100%;
+			  display: block;
+			  background: url("images/off.jpg") no-repeat center center ;
+			  background-size: cover;
+			}
 		</style>
 	</head>
 	<body>
+		<div id="scenecontainer">
+			<canvas id="threecanvas"></canvas>
+		</div>
+
 		<script src="js/three.js"></script>
 		<script>
+			const canvas = document.querySelector('#threecanvas');
+
 			var scene = new THREE.Scene();
+
+			{
+				 const color = 0xFFFFFF;
+				 const intensity = 1;
+				 const light = new THREE.DirectionalLight(color, intensity);
+				 light.position.set(-1, 2, 4);
+				 scene.add(light);
+			 }
+
 			var camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
-			var renderer = new THREE.WebGLRenderer();
+			const renderer = new THREE.WebGLRenderer({
+		    canvas,
+		    alpha: true,
+		  });
+
 			renderer.setSize( window.innerWidth, window.innerHeight );
-			document.body.appendChild( renderer.domElement );
 
 			var texture = new THREE.TextureLoader().load( 'images/waiting.jpg' );
 			var geometry = new THREE.BoxGeometry();
+			//var material = new THREE.MeshPhongMaterial({color: 0x44aa88});
+			//var cube = new THREE.Mesh(geometry, material);
 			var material = new THREE.MeshBasicMaterial( { map: texture } );
 			var cube = new THREE.Mesh( geometry, material );
 			scene.add( cube );
