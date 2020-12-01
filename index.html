@@ -4,7 +4,10 @@
 		<meta charset="utf-8">
 		<title>TonyMg</title>
 		<style>
-			body { margin: 0; }
+			body {
+				margin: 0;
+				background-image: url('/images/off.jpg');
+			 }
 		</style>
 	</head>
 	<body>
@@ -16,9 +19,6 @@
 			var renderer = new THREE.WebGLRenderer();
 			renderer.setSize( window.innerWidth, window.innerHeight );
 			document.body.appendChild( renderer.domElement );
-
-			//change background color
-			scene.background = new THREE.Color( 0x8c8c8c );
 
 			var texture = new THREE.TextureLoader().load( 'images/waiting.jpg' );
 			var geometry = new THREE.BoxGeometry();
