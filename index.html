@@ -22,6 +22,7 @@
 			}
 
 			#threecanvas {
+				z-index:1;
 				position: absolute;
 				top:0;
 				left:0;
@@ -33,10 +34,12 @@
 			}
 
 			.titlecontainer{
-					margin:auto;
-					max-width: 1000px;
-					overflow: hidden;
-					height:30vh;
+				z-index:2;
+				position: relative;
+				margin:auto;
+				max-width: 1000px;
+				overflow: hidden;
+				height:30vh;
 			}
 
 			.custombtn{
@@ -47,6 +50,7 @@
 				text-align: center;
 				padding-top:20px;
 				padding-bottom:20px;
+				z-index:2;
 			}
 
 			.custombtn:hover{
@@ -65,12 +69,13 @@
 				top:45vh;
 				right:5vw;
 			}
+
 		</style>
 	</head>
 	<body>
 		<div class="titlecontainer">
-				<p data-text="711">711TMG</p>
-			</div>
+			<p data-text="711">711TMG</p>
+		</div>
 		<div id="scenecontainer">
 			<canvas id="threecanvas"></canvas>
 			<a id="leftbtn" class="custombtn" href="./developer.html">As A Developer</a>
