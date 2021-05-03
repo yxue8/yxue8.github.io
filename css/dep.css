@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
 :root {
   --f-size: 12;
   --f-unit: 1vmin;
@@ -13,7 +14,6 @@
 body {
   font-family: 'Press Start 2P', cursive;
   font-size: var(--f);
-  display: flex;
   margin: 0;
   overflow: hidden;
 }

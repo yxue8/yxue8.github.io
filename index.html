@@ -5,8 +5,14 @@
 		<link rel="stylesheet" href="css/dep.css">
 		<title>TonyMg</title>
 		<style>
+
+			html{
+				height:100%;
+			}
 			body {
 				margin: 0;
+				height:100%;
+				width:100%;
 				background-color:black;
 			 }
 
@@ -17,25 +23,55 @@
 
 			#threecanvas {
 			  display: block;
-			  background: url("images/off.jpg") no-repeat center center ;
-				background-position: 58% bottom;
+			  background: url("images/off.jpg") no-repeat center center;
+				background-size:60% 100%;
+				height:70vh !important;
+				width:100% !important;
 			}
 
 			.titlecontainer{
-					position: absolute;
-					left: 0;
-					right: 0;
 					margin:auto;
 					max-width: 1000px;
+					overflow: hidden;
+					height:30vh;
+			}
+
+			.custombtn{
+				width:280px;
+				border: 2px solid white;
+				font-size:15px;
+				color:white;
+				text-align: center;
+				padding-top:20px;
+				padding-bottom:20px;
+			}
+
+			.custombtn:hover{
+				color:blue;
+				cursor:pointer;
+			}
+
+			#leftbtn{
+				position: absolute;
+				top:45vh;
+				left:5vw;
+			}
+
+			#rightbtn{
+				position: absolute;
+				top:45vh;
+				right:5vw;
 			}
 		</style>
 	</head>
 	<body>
+		<div class="titlecontainer">
+				<p data-text="711">711TMG</p>
+			</div>
 		<div id="scenecontainer">
-			<div class="titlecontainer">
-					<p data-text="711">711TMG</p>
-				</div>
 			<canvas id="threecanvas"></canvas>
+			<a id="leftbtn" class="custombtn" href="./developer.html">As A Developer</a>
+			<a id="rightbtn" class="custombtn" href="./photographer.html">As A Photographer</a>
 		</div>
 
 		<script src="js/three.js"></script>
